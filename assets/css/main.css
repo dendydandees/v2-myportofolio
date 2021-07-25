@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  ::-webkit-scrollbar {
+    width: 16px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #8b5cf6;
+    height: 60px;
+    border-radius: 8px;
+    border: 4px solid transparent;
+    background-clip: content-box;
+  }
+  ::-webkit-scrollbar-track {
+    background: rgb(31, 41, 55);
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply transition-all duration-300;
+  }
+}
+
+@layer components {
+  .transition-custom-300 {
+    @apply transition-all duration-300;
+  }
+  .link {
+    @apply border-b-2 border-transparent hover:border-b-2 hover:border-white;
+  }
+  .link-rounded {
+    @apply border-2 border-transparent rounded hover:border-2 hover:border-white active:border-2 active:border-white;
+  }
+}
