@@ -40,25 +40,25 @@
       @click="sideNavClick()"
     />
     <div
-      class="transition-custom-300 absolute bg-yellow-400 text-black w-3/4 min-h-screen p-4 lg:p-6"
+      class="transition-custom-300 absolute bg-purple-600 w-3/4 min-h-screen p-4 lg:p-6"
       :class="[isOpen ? 'top-0 left-0' : 'top-0 -left-full']"
     >
       <div class="flex justify-between items-center">
-        <button class="transition-custom-300 font-bold link hover:border-black" @click="scrollToTop()">
+        <button class="transition-custom-300 font-bold link" @click="scrollToTop()">
           Dandees
         </button>
-        <button class="link-rounded hover:border-black" @click="sideNavClick()">
+        <button class="link-rounded" @click="sideNavClick()">
           <span
             class="iconify"
             data-icon="heroicons-outline:x"
             data-inline="false"
-            style="color: #000;"
+            style="color: #fff;"
             data-width="24px"
           />
         </button>
       </div>
       <nav class="my-10 space-y-8">
-        <button class="transition-custom-300 link text-2xl font-bold hover:border-black" @click="scrollToTop()">
+        <button class="transition-custom-300 link text-2xl font-bold" @click="scrollToTop()">
           Home
         </button>
       </nav>

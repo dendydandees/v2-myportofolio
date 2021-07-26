@@ -69,18 +69,30 @@ export default {
   pwa: {
     meta: {
       author: 'Dendy Dharmawan',
-      theme_color: '#7c3aed'
+      theme_color: '#8b5cf6'
+    },
+    icon: {
+      source: 'static/maskable_icon.png'
     },
     manifest: {
       name: 'Dendy Dharmawan | Front-End Web Developer',
       short_name: 'Dendy Dharmawan',
       description:
         'I am a Front-End Web Developer from Jakarta, Indonesia. In love with building a websites, slicing designs into code, making them user friendly, and also talk about politics 🤭.',
-      background_color: '#f3f4f6',
+      background_color: '#8b5cf6',
       lang: 'en'
+    },
+    workbox: {
+      // enabled: false
     }
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {}
+  build: {},
+
+  // loading components
+  loading: {
+    color: '#f59e0b',
+    height: '8px'
+  }
 }
