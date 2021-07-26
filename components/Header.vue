@@ -12,6 +12,7 @@
       </button>
       <button
         class="transition-custom-300 inline-block link-rounded lg:hidden"
+        aria-label="Side Nav"
         @click="sideNavClick()"
       >
         <span
@@ -47,7 +48,7 @@
         <button class="transition-custom-300 font-bold link" @click="scrollToTop()">
           Dandees
         </button>
-        <button class="link-rounded" @click="sideNavClick()">
+        <button class="link-rounded" aria-label="Side Nav" @click="sideNavClick()">
           <span
             class="iconify"
             data-icon="heroicons-outline:x"

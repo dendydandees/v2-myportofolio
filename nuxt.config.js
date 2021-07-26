@@ -2,6 +2,13 @@ export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 
+  // public runtime nuxt config
+  publicRuntimeConfig: {
+    googleAnalytics: {
+      id: process.env.GOOGLE_ANALYTICS_ID || ''
+    }
+  },
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'Dendy Dharmawan | Front-End Web Developer',
@@ -37,7 +44,8 @@ export default {
     ],
     script: [
       {
-        src: 'https://code.iconify.design/1/1.0.7/iconify.min.js'
+        src: 'https://code.iconify.design/1/1.0.7/iconify.min.js',
+        body: true
       }
     ]
   },
@@ -56,7 +64,8 @@ export default {
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/tailwindcss
-    '@nuxtjs/tailwindcss'
+    '@nuxtjs/tailwindcss',
+    '@nuxtjs/google-analytics'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -89,6 +98,12 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
+
+  // analytics settings
+  googleAnalytics: {
+    id: process.env.GOOGLE_ANALYTICS_ID || '',
+    dev: true
+  },
 
   // loading components
   loading: {

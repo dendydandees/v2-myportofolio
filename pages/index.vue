@@ -12,8 +12,15 @@
           <h1 class="mb-6 text-4xl mx-auto font-bold lg:text-7xl lg:w-1/2 lg:mb-8">
             Dendy Dharmawan
           </h1>
-          <button class="bg-gray-800 rounded-full p-2 w-28 h-28">
-            <img src="~/assets/img/dendy_pp.jpg" alt="" class="hand-emoji h-full w-full rounded-full object-cover object-center" loading="lazy">
+          <button class="bg-gray-800 rounded-full p-2 w-28 h-28" aria-label="Greetings">
+            <img
+              src="~/assets/img/dendy_pp.jpg"
+              alt=""
+              class="hand-emoji h-full w-full rounded-full object-cover object-center"
+              loading="lazy"
+              width="100%"
+              height="100%"
+            >
           </button>
         </div>
         <div
