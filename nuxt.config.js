@@ -5,7 +5,7 @@ export default {
   // public runtime nuxt config
   publicRuntimeConfig: {
     googleAnalytics: {
-      id: process.env.GOOGLE_ANALYTICS_ID || ''
+      id: process.env.GOOGLE_ANALYTICS_ID || 'UA-155151794-1'
     }
   },
 
@@ -101,7 +101,7 @@ export default {
 
   // analytics settings
   googleAnalytics: {
-    id: process.env.GOOGLE_ANALYTICS_ID || '',
+    id: process.env.GOOGLE_ANALYTICS_ID || 'UA-155151794-1',
     dev: true
   },
 

@@ -29,7 +29,7 @@
           <p>
             I am a Front-End Web Developer from Jakarta, Indonesia. In love with
             building a websites, slicing designs into code, making them user
-            friendly, and also talk about politics 🤭.
+            friendly, and also in love with you <span class="animate-pulse">💜</span>.
           </p>
         </div>
       </div>
