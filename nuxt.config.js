@@ -24,7 +24,7 @@ export default {
         hid: 'description',
         name: 'description',
         content:
-          'I am a Front-End Web Developer from Jakarta, Indonesia. In love with building a websites, slicing designs into code, making them user friendly, and also talk about politics 🤭.'
+          'I am a Front-End Web Developer from Jakarta, Indonesia. In love with a websites, technology, design, and photography. Therefore I like to explain things with words, codes and photosets.'
       },
       { name: 'format-detection', content: 'telephone=no' }
     ],
@@ -87,12 +87,12 @@ export default {
       name: 'Dendy Dharmawan | Front-End Web Developer',
       short_name: 'Dendy Dharmawan',
       description:
-        'I am a Front-End Web Developer from Jakarta, Indonesia. In love with building a websites, slicing designs into code, making them user friendly, and also talk about politics 🤭.',
+        'I am a Front-End Web Developer from Jakarta, Indonesia. In love with a websites, technology, design, and photography. Therefore I like to explain things with words, codes and photosets.',
       background_color: '#8b5cf6',
       lang: 'en'
     },
     workbox: {
-      // enabled: false
+      // enabled: true
     }
   },
 

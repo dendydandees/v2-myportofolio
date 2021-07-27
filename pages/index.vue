@@ -9,10 +9,14 @@
           <p class="mb-2">
             Hello there <span class="hand-emoji">👋</span>, I'm
           </p>
-          <h1 class="mb-6 text-4xl mx-auto font-bold lg:text-7xl lg:w-1/2 lg:mb-8">
+          <h1
+            class="mb-6 text-4xl mx-auto font-bold lg:text-7xl lg:w-1/2 lg:mb-8"
+          >
             Dendy Dharmawan
           </h1>
-          <button class="bg-gray-800 rounded-full p-2 w-28 h-28" aria-label="Greetings">
+          <div
+            class="mx-auto bg-gray-800 rounded-full p-2 w-28 h-28"
+          >
             <img
               src="~/assets/img/dendy_pp.jpg"
               alt=""
@@ -21,15 +25,16 @@
               width="100%"
               height="100%"
             >
-          </button>
+          </div>
         </div>
         <div
           class="bubble relative p-4 mx-auto bg-gray-800 rounded-xl md:w-1/2 lg:p-6"
+          :style="bubbleStyle"
         >
           <p>
             I am a Front-End Web Developer from Jakarta, Indonesia. In love with
-            building a websites, slicing designs into code, making them user
-            friendly, and also in love with you <span class="animate-pulse">💜</span>.
+            a websites, technology, design, and photography. Therefore I like to
+            explain things with words, codes and photosets.
           </p>
         </div>
       </div>
@@ -39,7 +44,14 @@
 
 <script>
 export default {
-  scrollToTop: true
+  scrollToTop: true,
+  data () {
+    return {
+      bubbleStyle: {
+        '--bg-color': '#1f2937'
+      }
+    }
+  }
 }
 </script>
 
@@ -78,7 +90,7 @@ export default {
   width: 0;
   height: 0;
   border: 1rem solid transparent;
-  border-bottom-color: rgb(31, 41, 55);
+  border-bottom-color: var(--bg-color);
   border-top: 0;
   margin-left: -1rem;
   margin-top: -1rem;
