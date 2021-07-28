@@ -15,7 +15,7 @@
             Dendy Dharmawan
           </h1>
           <div
-            class="mx-auto bg-gray-800 rounded-full p-2 w-28 h-28"
+            class="mx-auto rounded-full p-2 w-28 h-28 bg-gray-200 dark:bg-gray-800"
           >
             <img
               src="~/assets/img/dendy_pp.jpg"
@@ -28,7 +28,7 @@
           </div>
         </div>
         <div
-          class="bubble relative p-4 mx-auto bg-gray-800 rounded-xl md:w-1/2 lg:p-6"
+          class="bubble relative p-4 mx-auto bg-gray-200 dark:bg-gray-800 rounded-xl md:w-1/2 lg:p-6 text-black dark:text-white"
           :style="bubbleStyle"
         >
           <p>
@@ -43,12 +43,30 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
   scrollToTop: true,
   data () {
     return {
       bubbleStyle: {
         '--bg-color': '#1f2937'
+      }
+    }
+  },
+  computed: {
+    ...mapState('theme', ['isDarkTheme'])
+  },
+  watch: {
+    isDarkTheme (newTheme, oldTheme) {
+      if (!newTheme) {
+        this.bubbleStyle = {
+          '--bg-color': '#e5e7eb'
+        }
+      } else {
+        this.bubbleStyle = {
+          '--bg-color': '#1f2937'
+        }
       }
     }
   }

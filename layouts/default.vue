@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <main :class="[isDarkTheme ? 'dark' : '']">
     <Header />
     <Nuxt />
     <Footer />
@@ -7,7 +7,12 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
+  computed: {
+    ...mapState('theme', ['isDarkTheme'])
+  },
   mounted () {
     this.$nextTick(() => {
       this.$nuxt.$loading.start()

@@ -19,7 +19,7 @@
   html {
     scroll-behavior: smooth;
   }
-  body {
+  * {
     @apply transition-all duration-300;
   }
 }
