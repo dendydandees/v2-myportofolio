@@ -3,7 +3,7 @@
     <div
       class="absolute left-0 right-0 top-0 bottom-0 mx-auto my-auto h-20 z-0 filter blur-3xl animate-pulse bg-gradient-to-r from-purple-800 dark:from-purple-600 to-yellow-800 dark:to-yellow-600 w-full md:w-1/3"
     />
-    <div class="relative flex flex-wrap justify-center items-center mx-auto z-10 py-6 w-full md:w-8/12 lg:w-1/2">
+    <div class="relative flex flex-wrap justify-center items-center mx-auto z-10 py-6 w-full md:w-8/12 lg:w-6/12 xl:w-4/12">
       <a href="https://github.com/dendydandees" target="_blank" rel="noopener noreferrer" class="btn-social-media p-4 my-2 mx-2 md:mx-4">
         Github
       </a>
