@@ -1,6 +1,6 @@
 <template>
   <header
-    class="p-4 fixed top-0 bg-transparent z-20 min-w-full text-white lg:p-6"
+    class="p-4 fixed top-0 bg-transparent z-20 min-w-full lg:p-6"
   >
     <!-- nav for large devices -->
     <div class="container flex justify-between items-center mx-auto">
@@ -16,10 +16,9 @@
         @click="sideNavClick()"
       >
         <span
-          class="iconify"
+          class="iconify text-gray-800 dark:text-gray-200"
           data-icon="heroicons-outline:menu-alt-2"
           data-inline="false"
-          style="color: #fff;"
           data-width="24px"
           data-height="24px"
         />
@@ -34,20 +33,18 @@
         >
           <div v-show="isDarkTheme">
             <span
-              class="iconify"
+              class="iconify text-gray-800 dark:text-gray-200"
               data-icon="heroicons-outline:sun"
               data-inline="false"
-              style="color: #fff;"
               data-width="32px"
               data-height="32px"
             />
           </div>
           <div v-show="!isDarkTheme">
             <span
-              class="iconify"
+              class="iconify text-gray-800 dark:text-gray-200"
               data-icon="heroicons-outline:moon"
               data-inline="false"
-              style="color: #fff;"
               data-width="32px"
               data-height="32px"
             />
@@ -66,7 +63,7 @@
       @click="sideNavClick()"
     />
     <div
-      class="absolute bg-gradient-to-b from-yellow-500 dark:from-purple-600 to-yellow-700 dark:to-purple-800 w-3/4 min-h-screen p-4 lg:p-6"
+      class="absolute bg-gradient-to-b from-yellow-400 dark:from-purple-600 to-yellow-600 dark:to-purple-800 w-3/4 min-h-screen p-4 lg:p-6"
       :class="[isOpen ? 'top-0 left-0' : 'top-0 -left-full']"
     >
       <div class="flex justify-between items-center">
@@ -82,10 +79,9 @@
           @click="sideNavClick()"
         >
           <span
-            class="iconify"
+            class="iconify text-gray-800 dark:text-gray-200"
             data-icon="heroicons-outline:x"
             data-inline="false"
-            style="color: #fff;"
             data-width="24px"
           />
         </button>
@@ -99,20 +95,18 @@
             >
               <div v-show="isDarkTheme">
                 <span
-                  class="iconify"
+                  class="iconify text-gray-800 dark:text-gray-200"
                   data-icon="heroicons-outline:sun"
                   data-inline="false"
-                  style="color: #fff;"
                   data-width="32px"
                   data-height="32px"
                 />
               </div>
               <div v-show="!isDarkTheme">
                 <span
-                  class="iconify"
+                  class="iconify text-gray-800 dark:text-gray-200"
                   data-icon="heroicons-outline:moon"
                   data-inline="false"
-                  style="color: #fff;"
                   data-width="32px"
                   data-height="32px"
                 />

@@ -4,17 +4,13 @@
 
 @layer base {
   ::-webkit-scrollbar {
-    width: 16px;
+    @apply w-4;
   }
   ::-webkit-scrollbar-thumb {
-    background: #8b5cf6;
-    height: 60px;
-    border-radius: 8px;
-    border: 4px solid transparent;
-    background-clip: content-box;
+    @apply bg-purple-500 rounded-lg h-16 border-4 border-solid border-transparent bg-clip-content;
   }
   ::-webkit-scrollbar-track {
-    background: rgb(31, 41, 55);
+    @apply bg-gray-800;
   }
   html {
     scroll-behavior: smooth;
@@ -29,9 +25,12 @@
     @apply transition-all duration-300;
   }
   .link {
-    @apply border-b-2 border-transparent hover:border-b-2 hover:border-white;
+    @apply text-gray-800 dark:text-gray-200 border-b-2 border-transparent hover:border-b-2  hover:border-gray-800 dark:hover:border-gray-200;
   }
   .link-rounded {
-    @apply border-2 border-transparent rounded hover:border-2 hover:border-white active:border-2 active:border-white;
+    @apply text-gray-800 dark:text-gray-200 border-2 border-transparent rounded hover:border-2 hover:border-gray-800  dark:hover:border-gray-200 active:border-2 active:border-gray-900 dark:active:border-gray-200;
+  }
+  .btn-social-media {
+    @apply bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded text-center font-bold hover:underline hover:bg-purple-600 dark:hover:bg-purple-500 hover:text-gray-200 dark:hover:text-gray-800;
   }
 }
