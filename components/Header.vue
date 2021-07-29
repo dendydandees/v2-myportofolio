@@ -1,6 +1,6 @@
 <template>
   <header
-    class="p-4 fixed top-0 bg-transparent z-20 min-w-full lg:p-6"
+    class="p-4 fixed top-0 bg-transparent z-50 min-w-full lg:p-6"
   >
     <!-- nav for large devices -->
     <div class="container flex justify-between items-center mx-auto">
