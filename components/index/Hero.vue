@@ -45,7 +45,6 @@
 import { mapState } from 'vuex'
 
 export default {
-  scrollToTop: true,
   data () {
     return {
       bubbleStyle: {

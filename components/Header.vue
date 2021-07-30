@@ -1,15 +1,18 @@
 <template>
   <header
-    class="p-4 fixed top-0 bg-transparent z-50 min-w-full lg:p-6"
+    class="p-4 fixed top-0 z-50 min-w-full lg:p-6"
+    :class="[ isIntersectingElement ? 'bg-gray-200 dark:bg-gray-800' : 'bg-transparent' ]"
   >
     <!-- nav for large devices -->
     <div class="container flex justify-between items-center mx-auto">
-      <button
+      <nuxt-link
+        to="/"
+        aria-label="Home"
         class="font-bold link"
-        @click="scrollToTop()"
+        @click.native="scrollToTop()"
       >
         Dandees
-      </button>
+      </nuxt-link>
       <button
         class="inline-block link-rounded lg:hidden"
         aria-label="Side Nav"
@@ -24,9 +27,9 @@
         />
       </button>
       <nav class="hidden space-x-3 lg:flex lg:items-center">
-        <button class="link" @click="scrollToTop()">
+        <nuxt-link to="/" class="link" @click.native="scrollToTop()">
           Home
-        </button>
+        </nuxt-link>
         <button
           class="link-rounded"
           @click="toggleTheme()"
@@ -67,12 +70,14 @@
       :class="[isOpen ? 'top-0 left-0' : 'top-0 -left-full']"
     >
       <div class="flex justify-between items-center">
-        <button
+        <nuxt-link
+          to="/"
+          aria-label="Home"
           class="font-bold link"
-          @click="scrollToTop()"
+          @click.native="scrollToTop()"
         >
           Dandees
-        </button>
+        </nuxt-link>
         <button
           class="link-rounded"
           aria-label="Side Nav"
@@ -91,6 +96,7 @@
           <li>
             <button
               class="link-rounded"
+              aria-label="Theme"
               @click="toggleTheme()"
             >
               <div v-show="isDarkTheme">
@@ -114,12 +120,13 @@
             </button>
           </li>
           <li>
-            <button
+            <nuxt-link
+              to="/"
               class="link text-2xl font-bold"
-              @click="scrollToTop()"
+              @click.native="scrollToTop()"
             >
               Home
-            </button>
+            </nuxt-link>
           </li>
         </ul>
       </nav>
@@ -133,14 +140,34 @@ import { mapState, mapActions } from 'vuex'
 export default {
   data () {
     return {
-      isOpen: false
+      isOpen: false,
+      isIntersectingElement: false
     }
   },
   computed: {
     ...mapState('theme', ['isDarkTheme'])
   },
+  mounted () {
+    const socialMediaElement = document.querySelector('#social-media')
+    const handler = (entries) => {
+      if (entries[0].boundingClientRect.top <= 0) {
+        this.isIntersectingElement = true
+        this.toggleButtonToTop(true)
+      } else {
+        this.isIntersectingElement = false
+        this.toggleButtonToTop(false)
+      }
+    }
+
+    const observer = new window.IntersectionObserver(handler, {
+      root: null,
+      rootMargin: '0px',
+      threshold: 1
+    })
+    observer.observe(socialMediaElement)
+  },
   methods: {
-    ...mapActions('theme', ['toggleTheme']),
+    ...mapActions('theme', ['toggleTheme', 'toggleButtonToTop']),
     sideNavClick () {
       this.isOpen = !this.isOpen
     },

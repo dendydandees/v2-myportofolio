@@ -30,6 +30,9 @@
   .link-rounded {
     @apply text-gray-800 dark:text-gray-200 border-2 border-transparent rounded hover:border-2 hover:border-gray-800  dark:hover:border-gray-200 active:border-2 active:border-gray-900 dark:active:border-gray-200;
   }
+  .btn-to-top {
+    @apply bg-gray-800 dark:bg-gray-200 text-gray-200 dark:text-gray-800 rounded text-center font-bold hover:underline hover:bg-purple-500 dark:hover:bg-purple-600 hover:text-gray-800 dark:hover:text-gray-200;
+  }
   .btn-social-media {
     @apply bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded text-center font-bold hover:underline hover:bg-purple-600 dark:hover:bg-purple-500 hover:text-gray-200 dark:hover:text-gray-800;
   }
