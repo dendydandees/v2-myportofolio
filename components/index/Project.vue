@@ -1,11 +1,19 @@
 <template>
-  <div
+  <article
     v-if="true"
     id="project"
     class="bg-gray-200 dark:bg-gray-800 px-4 py-10 lg:px-6 lg:py-12"
   >
+    <!-- loading -->
+    <LoadingFetch v-if="$fetchState.pending" />
+
+    <!-- if error -->
+    <ErrorFetch v-else-if="$fetchState.error" />
+
+    <!-- if success -->
     <div
       v-for="project in projects"
+      v-else
       :key="project.id"
       class="group relative z-20 my-24 grid grid-cols-12 gap-x-4 gap-y-10 place-items-center rounded-lg hover:shadow-xl"
       @mouseover="hoverEvent(project.id)"
@@ -21,11 +29,11 @@
       >
         <div class="space-y-6">
           <div class="space-y-3">
-            <div>
+            <div class="flex items-center">
               <span
                 v-for="(lang, langIndex) in project.language"
                 :key="langIndex"
-                class="p-1 bg-yellow-500 dark:bg-yellow-400 text-gray-800 text-sm mr-2 my-2 rounded-md"
+                class="p-1 bg-yellow-500 dark:bg-yellow-400 text-gray-800 text-sm text-center mr-2 my-2 rounded-md"
               >
                 {{ lang }}
               </span>
@@ -81,7 +89,16 @@
         >
       </div>
     </div>
-  </div>
+
+    <div class="text-center">
+      <button
+        class="btn text-xl p-3 md:p-4 w-full md:w-auto"
+        @click="setItem()"
+      >
+        View More Project
+      </button>
+    </div>
+  </article>
 </template>
 
 <script>
@@ -90,22 +107,37 @@ export default {
     return {
       projects: [],
       error: null,
-      hover: null
+      hover: null,
+      item: 2
     }
   },
   async fetch () {
-    const { data: projects, error } = await this.$supabase
-      .from('projects')
-      .select('*')
-      .order('created_at')
-      .range(0, 9)
+    try {
+      const { data: projects, error } = await this.$supabase
+        .from('projects')
+        .select('*')
+        .order('created_at', { ascending: false })
+        .range(0, this.item)
 
-    this.projects = projects
-    this.error = error
+      this.projects = projects
+      throw error
+    } catch (error) {
+      this.error = error
+    }
+  },
+  watch: {
+    async item (newItem, oldItem) {
+      await this.$router.push({ name: 'index', hash: '' })
+      await this.$fetch()
+      await this.$router.push({ name: 'index', hash: '#project' })
+    }
   },
   methods: {
     hoverEvent (id) {
       this.hover = id
+    },
+    setItem () {
+      this.item += 3
     }
   }
 }

@@ -1,6 +1,7 @@
 <template>
   <nuxt-link
     to="/"
+    exact
     aria-label="Back to top"
     class="btn-to-top fixed flex items-center px-3 py-2 text-xs md:text-sm z-50"
     :class="[showButtonToTop ? 'bottom-4 right-4' : '-bottom-full -right-full']"

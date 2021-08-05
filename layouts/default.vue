@@ -1,7 +1,7 @@
 <template>
   <main :class="[isDarkTheme ? 'dark' : '']">
     <Header />
-    <Nuxt />
+    <Nuxt keep-alive />
     <Footer />
   </main>
 </template>
