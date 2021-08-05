@@ -1,7 +1,7 @@
 <template>
   <article
     id="social-media"
-    class="relative bg-gray-200 dark:bg-gray-800 p-4 lg:p-6"
+    class="relative bg-gray-200 dark:bg-gray-800 px-4 py-10 lg:px-6 lg:py-20"
   >
     <div
       class="absolute left-0 right-0 top-0 bottom-0 mx-auto my-auto h-20 z-0 filter blur-3xl animate-pulse bg-gradient-to-r from-purple-800 dark:from-purple-600 to-yellow-800 dark:to-yellow-600 w-full md:w-1/3"

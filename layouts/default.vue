@@ -23,4 +23,11 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+.nuxt-link-active {
+  font-weight: bold;
+}
+.nuxt-link-exact-active {
+  font-weight: bold;
+}
+</style>

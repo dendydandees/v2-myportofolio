@@ -12,7 +12,7 @@
         <h1
           class="mb-6 text-4xl mx-auto font-bold lg:text-7xl lg:w-1/2 lg:mb-8"
         >
-          Dendy Dharmawan
+          {{ $config.name }}
         </h1>
         <div
           class="mx-auto rounded-full p-2 w-28 h-28 bg-gray-200 dark:bg-gray-800"
@@ -20,7 +20,7 @@
           <img
             src="~/assets/img/dendy_pp.jpg"
             alt=""
-            class="hand-emoji h-full w-full rounded-full object-cover object-center"
+            class="hand-emoji h-full w-full rounded-full object-cover object-center shadow-md"
             loading="lazy"
             width="100%"
             height="100%"
@@ -28,13 +28,11 @@
         </div>
       </div>
       <div
-        class="bubble relative p-4 mx-auto bg-gray-200 dark:bg-gray-800 rounded-xl md:w-1/2 lg:p-6 text-gray-800 dark:text-gray-200"
+        class="bubble relative p-4 mx-auto shadow-md bg-gray-200 dark:bg-gray-800 rounded-xl md:w-1/2 lg:p-6 text-gray-800 dark:text-gray-200"
         :style="bubbleStyle"
       >
         <p>
-          I am a Front-End Web Developer from Jakarta, Indonesia. In love with a
-          websites, technology, design, and photography. Therefore I like to
-          explain things with words, codes and photosets.
+          {{ $config.greeting }}
         </p>
       </div>
     </div>

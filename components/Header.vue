@@ -1,7 +1,7 @@
 <template>
   <header
     class="p-4 fixed top-0 z-50 min-w-full lg:p-6"
-    :class="[ isIntersectingElement ? 'bg-gray-200 dark:bg-gray-800' : 'bg-transparent' ]"
+    :class="[ isIntersectingElement ? 'bg-gray-200 dark:bg-gray-800 shadow-md' : 'bg-transparent' ]"
   >
     <!-- nav for large devices -->
     <div class="container flex justify-between items-center mx-auto">
@@ -26,9 +26,12 @@
           data-height="24px"
         />
       </button>
-      <nav class="hidden space-x-3 lg:flex lg:items-center">
-        <nuxt-link to="/" class="link" @click.native="scrollToTop()">
+      <nav class="hidden space-x-4 lg:flex lg:items-center">
+        <nuxt-link to="/" class="link" exact @click.native="scrollToTop()">
           Home
+        </nuxt-link>
+        <nuxt-link to="#project" class="link">
+          Project
         </nuxt-link>
         <button
           class="link-rounded"
@@ -92,7 +95,7 @@
         </button>
       </div>
       <nav class="my-10">
-        <ul class="space-y-8">
+        <ul class="space-y-12">
           <li>
             <button
               class="link-rounded"
@@ -122,10 +125,16 @@
           <li>
             <nuxt-link
               to="/"
-              class="link text-2xl font-bold"
+              exact
+              class="link text-2xl"
               @click.native="scrollToTop()"
             >
               Home
+            </nuxt-link>
+          </li>
+          <li>
+            <nuxt-link to="#project" class="link text-2xl">
+              Project
             </nuxt-link>
           </li>
         </ul>

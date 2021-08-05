@@ -4,8 +4,10 @@ export default {
 
   // public runtime nuxt config
   publicRuntimeConfig: {
+    name: process.env.NAME,
+    greeting: process.env.GREETING,
     googleAnalytics: {
-      id: process.env.GOOGLE_ANALYTICS_ID || 'UA-155151794-1'
+      id: process.env.GOOGLE_ANALYTICS_ID
     }
   },
 
@@ -23,8 +25,7 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content:
-          'I am a Front-End Web Developer from Jakarta, Indonesia. In love with a websites, technology, design, and photography. Therefore I like to explain things with words, codes and photosets.'
+        content: process.env.GREETING
       },
       { name: 'format-detection', content: 'telephone=no' }
     ],
@@ -43,6 +44,10 @@ export default {
       }
     ],
     script: [
+      {
+        src: 'https://cdn.splitbee.io/sb.js',
+        async: true
+      },
       {
         src: 'https://code.iconify.design/1/1.0.7/iconify.min.js',
         body: true
@@ -65,29 +70,38 @@ export default {
     '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
-    '@nuxtjs/google-analytics'
+    // google analytics
+    '@nuxtjs/google-analytics',
+    // moment js
+    '@nuxtjs/moment'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/pwa
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    [
+      'nuxt-supabase',
+      {
+        supabaseUrl: process.env.SUPABASE_URL,
+        supabaseKey: process.env.SUPABASE_KEY
+      }
+    ]
   ],
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
     meta: {
-      author: 'Dendy Dharmawan',
+      author: process.env.NAME,
       theme_color: '#8b5cf6'
     },
     icon: {
       source: 'static/maskable_icon.png'
     },
     manifest: {
-      name: 'Dendy Dharmawan | Front-End Web Developer',
-      short_name: 'Dendy Dharmawan',
-      description:
-        'I am a Front-End Web Developer from Jakarta, Indonesia. In love with a websites, technology, design, and photography. Therefore I like to explain things with words, codes and photosets.',
+      name: process.env.NAME,
+      short_name: process.env.NAME,
+      description: process.env.GREETING,
       background_color: '#8b5cf6',
       lang: 'en'
     },
@@ -101,7 +115,7 @@ export default {
 
   // analytics settings
   googleAnalytics: {
-    id: process.env.GOOGLE_ANALYTICS_ID || 'UA-155151794-1',
+    id: process.env.GOOGLE_ANALYTICS_ID,
     dev: true
   },
 
