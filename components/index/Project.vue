@@ -90,7 +90,7 @@
       </div>
     </div>
 
-    <div class="text-center">
+    <div v-if="showLoadButton" class="text-center">
       <button
         class="btn text-xl p-3 md:p-4 w-full md:w-auto"
         @click="setItem()"
@@ -107,19 +107,23 @@ export default {
     return {
       projects: [],
       error: null,
+      item: 2,
+      count: 0,
       hover: null,
-      item: 2
+      showLoadButton: true
     }
   },
   async fetch () {
     try {
-      const { data: projects, error } = await this.$supabase
+      const { data: projects, error, count } = await this.$supabase
         .from('projects')
-        .select('*')
+        .select('*', { count: 'exact' })
         .order('created_at', { ascending: false })
         .range(0, this.item)
 
       this.projects = projects
+      this.count = count
+
       throw error
     } catch (error) {
       this.error = error
@@ -130,7 +134,12 @@ export default {
       await this.$router.push({ name: 'index', hash: '' })
       await this.$fetch()
       await this.$router.push({ name: 'index', hash: '#project' })
+
+      if (newItem >= this.count) { this.showLoadButton = false }
     }
+  },
+  mounted () {
+    this.subscribeProjects()
   },
   methods: {
     hoverEvent (id) {
@@ -138,6 +147,15 @@ export default {
     },
     setItem () {
       this.item += 3
+    },
+    subscribeProjects () {
+      this.$supabase
+        .from('projects')
+        .on('*', (payload) => {
+          this.projects = this.projects.filter(project => project.id !== payload.new.id)
+          this.projects.unshift(payload.new)
+        })
+        .subscribe()
     }
   }
 }
