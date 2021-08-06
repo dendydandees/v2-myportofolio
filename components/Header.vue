@@ -30,8 +30,8 @@
         <nuxt-link to="/" class="link" exact @click.native="scrollToTop()">
           Home
         </nuxt-link>
-        <nuxt-link to="#project" class="link">
-          Project
+        <nuxt-link to="#portofolio" class="link">
+          Portofolio
         </nuxt-link>
         <button
           class="link-rounded"
@@ -133,8 +133,8 @@
             </nuxt-link>
           </li>
           <li>
-            <nuxt-link to="#project" class="link text-2xl">
-              Project
+            <nuxt-link to="#portofolio" class="link text-2xl">
+              Portofolio
             </nuxt-link>
           </li>
         </ul>

@@ -2,7 +2,7 @@
   <section>
     <IndexHero />
     <IndexSocialMedia />
-    <IndexProject />
+    <IndexPortofolio />
     <ButtonToTop />
     <IndexPhotography />
   </section>

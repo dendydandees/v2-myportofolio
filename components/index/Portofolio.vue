@@ -1,10 +1,20 @@
 <template>
   <article
     v-if="true"
-    id="project"
+    id="portofolio"
     class="bg-gray-200 dark:bg-gray-800 px-4 py-10 lg:px-6 lg:py-12"
   >
     <div class="container mx-auto">
+      <!-- section title -->
+      <div class="my-24">
+        <h2 class="text-5xl text-gray-800 dark:text-gray-200 font-bold mb-6">
+          Portofolio
+        </h2>
+        <p class="text-gray-700 dark:text-gray-300 w-full md:w-8/12 lg:w-6/12">
+          This is a side project I'm working on. I work on this project when I get stuck, confused about what to do, and when I want to learn a tool or technology. but apart from that there are also projects that I worked on when I was taking certification, and there was also a system that I worked on when I was working on my thesis from the end of my college term.
+        </p>
+      </div>
+
       <!-- loading -->
       <LoadingFetch v-if="$fetchState.pending" />
 
@@ -40,9 +50,9 @@
                 </span>
               </div>
 
-              <h2 class="text-4xl font-bold text-gray-800 dark:text-gray-200">
+              <h3 class="text-4xl font-bold text-gray-800 dark:text-gray-200">
                 {{ project.name }}
-              </h2>
+              </h3>
               <p class="text-gray-600 dark:text-gray-400">
                 {{ $moment(project.created_at).format("LL") }}
               </p>
@@ -91,12 +101,13 @@
         </div>
       </div>
 
+      <!-- load more button -->
       <div v-if="showLoadButton" class="text-center">
         <button
           class="btn text-xl p-3 md:p-4 w-full md:w-auto"
           @click="setItem()"
         >
-          View More Project
+          View More Portofolio
         </button>
       </div>
     </div>
