@@ -33,6 +33,9 @@
         <nuxt-link to="#portofolio" class="link">
           Portofolio
         </nuxt-link>
+        <a href="https://tfjgyftazzpzzndywyan.supabase.in/storage/v1/object/sign/dendyportofolio/cv/CV_DENDY DHARMAWAN_2020.pdf?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJkZW5keXBvcnRvZm9saW8vY3YvQ1ZfREVORFkgREhBUk1BV0FOXzIwMjAucGRmIiwiaWF0IjoxNjI4MjQ5NDI0LCJleHAiOjE5NDM2MDk0MjR9.Ts0vtW90Ts3KaiRP99qNGRlIllbmkqAr0iDx3fHM7wY" target="_blank" rel="noopener noreferrer" class="btn-resume-large p-2">
+          Resume
+        </a>
         <button
           class="link-rounded"
           @click="toggleTheme()"
@@ -136,6 +139,11 @@
             <nuxt-link to="#portofolio" class="link text-2xl">
               Portofolio
             </nuxt-link>
+          </li>
+          <li>
+            <a href="https://tfjgyftazzpzzndywyan.supabase.in/storage/v1/object/sign/dendyportofolio/cv/CV_DENDY DHARMAWAN_2020.pdf?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJkZW5keXBvcnRvZm9saW8vY3YvQ1ZfREVORFkgREhBUk1BV0FOXzIwMjAucGRmIiwiaWF0IjoxNjI4MjQ5NDI0LCJleHAiOjE5NDM2MDk0MjR9.Ts0vtW90Ts3KaiRP99qNGRlIllbmkqAr0iDx3fHM7wY" target="_blank" rel="noopener noreferrer" class="btn-resume dark:btn-resume-dark p-2 text-2xl w-full block">
+              Resume
+            </a>
           </li>
         </ul>
       </nav>

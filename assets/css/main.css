@@ -36,6 +36,15 @@
   .btn-outline {
     @apply text-purple-600 dark:text-purple-500 border-purple-600 dark:border-purple-500 hover:underline hover:bg-purple-500 dark:hover:bg-purple-600 hover:text-gray-800 dark:hover:text-gray-200 active:ring active:ring-offset-2 active:ring-offset-gray-200 dark:active:ring-offset-gray-800 active:ring-purple-600 dark:active:ring-purple-500 rounded text-center font-bold border-2 shadow;
   }
+  .btn-resume-large {
+    @apply bg-purple-400 dark:bg-purple-600 text-gray-800 dark:text-gray-200 active:ring-offset-gray-200 dark:active:ring-offset-gray-800 hover:bg-purple-500 dark:hover:bg-purple-700 hover:text-gray-800 dark:hover:text-gray-200 active:ring active:ring-offset-2 active:ring-purple-500 dark:active:ring-purple-700 rounded text-center font-bold border-2 border-transparent shadow;
+  }
+  .btn-resume {
+    @apply bg-purple-500 text-gray-800 hover:underline hover:bg-purple-600 hover:text-gray-800 active:ring active:ring-offset-2 active:ring-offset-yellow-600  active:ring-purple-500 rounded text-center font-bold border-2 border-transparent shadow;
+  }
+  .btn-resume-dark {
+    @apply bg-yellow-600 text-gray-200 hover:underline hover:bg-yellow-500 hover:text-gray-200 active:ring active:ring-offset-2 active:ring-offset-purple-800  active:ring-yellow-500 rounded text-center font-bold border-2 border-transparent shadow;
+  }
   .btn-to-top {
     @apply bg-gray-800 dark:bg-gray-200 text-gray-200 dark:text-gray-800 hover:underline hover:bg-purple-500 dark:hover:bg-purple-600 hover:text-gray-800 dark:hover:text-gray-200 rounded text-center font-bold shadow;
   }
