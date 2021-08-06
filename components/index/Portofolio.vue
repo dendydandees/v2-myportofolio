@@ -146,7 +146,7 @@ export default {
     async item (newItem, oldItem) {
       await this.$router.push({ name: 'index', hash: '' })
       await this.$fetch()
-      await this.$router.push({ name: 'index', hash: '#project' })
+      await this.$router.push({ name: 'index', hash: '#portofolio' })
 
       if (newItem >= this.count) { this.showLoadButton = false }
     }
