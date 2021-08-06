@@ -158,6 +158,11 @@ export default {
   },
   mounted () {
     const socialMediaElement = document.querySelector('#social-media')
+    const options = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 1
+    }
     const handler = (entries) => {
       if (entries[0].boundingClientRect.top <= 0) {
         this.isIntersectingElement = true
@@ -168,11 +173,7 @@ export default {
       }
     }
 
-    const observer = new window.IntersectionObserver(handler, {
-      root: null,
-      rootMargin: '0px',
-      threshold: 1
-    })
+    const observer = new IntersectionObserver(handler, options)
     observer.observe(socialMediaElement)
   },
   methods: {

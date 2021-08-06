@@ -4,6 +4,7 @@
     <IndexSocialMedia />
     <IndexProject />
     <ButtonToTop />
+    <IndexPhotography />
   </section>
 </template>
 
