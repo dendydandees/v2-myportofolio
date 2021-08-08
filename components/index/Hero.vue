@@ -4,7 +4,8 @@
     class="p-4 min-h-screen bg-gray-200 dark:bg-gray-800 lg:p-6 z-0"
   >
     <div class="absolute top-0 left-0 min-h-screen w-full bg-gradient-to-tl from-yellow-500 dark:from-yellow-600 to-purple-500 dark:to-purple-600 opacity-80 filter blur-3xl" />
-    <div class="relative container pt-20 mx-auto space-y-6 z-20">
+
+    <div class="relative container pt-28 mx-auto space-y-6 z-20">
       <div class="text-center text-gray-800 dark:text-gray-200">
         <p class="mb-2">
           Hello there <span class="hand-emoji">👋</span>, I'm

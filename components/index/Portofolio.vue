@@ -102,9 +102,9 @@
       </div>
 
       <!-- load more button -->
-      <div v-if="showLoadButton" class="text-center">
+      <div v-if="showLoadButton" class="text-center my-24">
         <button
-          class="btn text-xl p-3 my-24 md:p-4 w-full md:w-auto"
+          class="btn text-xl p-3 md:p-4 w-full md:w-auto"
           @click="setItem()"
         >
           View More Portofolio
