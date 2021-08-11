@@ -6,7 +6,7 @@
     <!-- nav for large devices -->
     <div class="container flex justify-between items-center mx-auto">
       <nuxt-link
-        to="/"
+        :to="link.home"
         aria-label="Home"
         class="font-bold link"
         @click.native="scrollToTop()"
@@ -27,13 +27,13 @@
         />
       </button>
       <nav class="hidden space-x-4 lg:flex lg:items-center">
-        <nuxt-link to="/" class="link" exact @click.native="scrollToTop()">
+        <nuxt-link :to="link.home" class="link" exact @click.native="scrollToTop()">
           Home
         </nuxt-link>
-        <nuxt-link to="#portofolio" class="link">
+        <nuxt-link :to="link.portofolio" class="link">
           Portofolio
         </nuxt-link>
-        <a href="https://tfjgyftazzpzzndywyan.supabase.in/storage/v1/object/sign/dendyportofolio/cv/CV_DENDY DHARMAWAN_2020.pdf?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJkZW5keXBvcnRvZm9saW8vY3YvQ1ZfREVORFkgREhBUk1BV0FOXzIwMjAucGRmIiwiaWF0IjoxNjI4MjQ5NDI0LCJleHAiOjE5NDM2MDk0MjR9.Ts0vtW90Ts3KaiRP99qNGRlIllbmkqAr0iDx3fHM7wY" target="_blank" rel="noopener noreferrer" class="btn-resume-large p-2">
+        <a :href="link.resume" target="_blank" rel="noopener noreferrer" class="btn-resume-large p-2">
           Resume
         </a>
         <button
@@ -77,7 +77,7 @@
     >
       <div class="flex justify-between items-center">
         <nuxt-link
-          to="/"
+          :to="link.home"
           aria-label="Home"
           class="font-bold link"
           @click.native="scrollToTop()"
@@ -127,7 +127,7 @@
           </li>
           <li>
             <nuxt-link
-              to="/"
+              :to="link.home"
               exact
               class="link text-2xl"
               @click.native="scrollToTop()"
@@ -136,12 +136,12 @@
             </nuxt-link>
           </li>
           <li>
-            <nuxt-link to="#portofolio" class="link text-2xl">
+            <nuxt-link :to="link.portofolio" class="link text-2xl">
               Portofolio
             </nuxt-link>
           </li>
           <li>
-            <a href="https://tfjgyftazzpzzndywyan.supabase.in/storage/v1/object/sign/dendyportofolio/cv/CV_DENDY DHARMAWAN_2020.pdf?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJkZW5keXBvcnRvZm9saW8vY3YvQ1ZfREVORFkgREhBUk1BV0FOXzIwMjAucGRmIiwiaWF0IjoxNjI4MjQ5NDI0LCJleHAiOjE5NDM2MDk0MjR9.Ts0vtW90Ts3KaiRP99qNGRlIllbmkqAr0iDx3fHM7wY" target="_blank" rel="noopener noreferrer" class="btn-resume dark:btn-resume-dark p-2 text-2xl w-full block">
+            <a :href="link.resume" target="_blank" rel="noopener noreferrer" class="btn-resume dark:btn-resume-dark p-2 text-2xl w-full block">
               Resume
             </a>
           </li>
@@ -158,7 +158,12 @@ export default {
   data () {
     return {
       isOpen: false,
-      isIntersectingElement: false
+      isIntersectingElement: false,
+      link: {
+        home: '/',
+        portofolio: '#portofolio',
+        resume: 'https://tfjgyftazzpzzndywyan.supabase.in/storage/v1/object/sign/dendyportofolio/cv/Dendy Dharmawan_CV 2021_compressed.pdf?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJkZW5keXBvcnRvZm9saW8vY3YvRGVuZHkgRGhhcm1hd2FuX0NWIDIwMjFfY29tcHJlc3NlZC5wZGYiLCJpYXQiOjE2Mjg2NDY0ODEsImV4cCI6MTk0NDAwNjQ4MX0.Ux1JvVgFyP8ozSS5tcncDCflDFK5CIZ2l76md8qdSvU'
+      }
     }
   },
   computed: {

@@ -127,20 +127,7 @@ export default {
     }
   },
   async fetch () {
-    try {
-      const { data: projects, error, count } = await this.$supabase
-        .from('projects')
-        .select('*', { count: 'exact' })
-        .order('created_at', { ascending: false })
-        .range(0, this.item)
-
-      this.projects = projects
-      this.count = count
-
-      throw error
-    } catch (error) {
-      this.error = error
-    }
+    await this.getProjects()
   },
   watch: {
     async item (newItem, oldItem) {
@@ -160,6 +147,22 @@ export default {
     },
     setItem () {
       this.item += 3
+    },
+    async getProjects () {
+      try {
+        const { data: projects, error, count } = await this.$supabase
+          .from('projects')
+          .select('*', { count: 'exact' })
+          .order('created_at', { ascending: false })
+          .range(0, this.item)
+
+        this.projects = projects
+        this.count = count
+
+        throw error
+      } catch (error) {
+        this.error = error
+      }
     },
     subscribeProjects () {
       this.$supabase
