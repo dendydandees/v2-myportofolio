@@ -73,7 +73,9 @@ export default {
     // google analytics
     '@nuxtjs/google-analytics',
     // moment js
-    '@nuxtjs/moment'
+    '@nuxtjs/moment',
+    // nuxt image for optimize images
+    '@nuxt/image'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -123,5 +125,10 @@ export default {
   loading: {
     color: '#f59e0b',
     height: '8px'
+  },
+
+  image: {
+    dir: 'assets/images',
+    domains: ['https://tfjgyftazzpzzndywyan.supabase.in/storage/v1/object/sign/dendyportofolio/projects/']
   }
 }

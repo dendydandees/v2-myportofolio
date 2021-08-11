@@ -72,7 +72,7 @@
               v-if="project.git_url"
               :href="project.git_url"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener noreferrer nofollow"
               class="btn text-lg p-2 md:p-3 w-full md:w-auto"
             >
               Read More
@@ -93,12 +93,16 @@
           v-if="project.image != null"
           class="relative col-span-12 lg:col-span-7 px-6 py-4"
         >
-          <img
+          <nuxt-img
             :src="project.image"
             :alt="project.name"
+            quality="75"
+            format="webp"
+            class="lg:ml-auto shadow-md w-full lg:w-10/12 group-hover:transform group-hover:scale-110"
             loading="lazy"
-            class="ml-auto shadow-md w-full lg:w-10/12 group-hover:transform group-hover:scale-110"
-          >
+            width="100%"
+            height="100%"
+          />
         </div>
       </div>
 

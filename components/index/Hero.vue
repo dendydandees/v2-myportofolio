@@ -18,14 +18,16 @@
         <div
           class="mx-auto rounded-full p-2 w-28 h-28 bg-gray-200 dark:bg-gray-800"
         >
-          <img
-            src="~/assets/img/dendy_pp.jpg"
-            alt=""
+          <nuxt-img
+            src="/dendy_pp.jpg"
+            alt="Dendy Photo Profile"
+            quality="75"
+            format="webp"
             class="hand-emoji h-full w-full rounded-full object-cover object-center shadow-md"
-            loading="lazy"
             width="100%"
             height="100%"
-          >
+            loading="lazy"
+          />
         </div>
       </div>
       <div
