@@ -3,7 +3,9 @@
     id="home"
     class="p-4 min-h-screen bg-gray-200 dark:bg-gray-800 lg:p-6 z-0"
   >
-    <div class="absolute top-0 left-0 min-h-screen w-full bg-gradient-to-tl from-yellow-500 dark:from-yellow-600 to-purple-500 dark:to-purple-600 opacity-80 filter blur-3xl" />
+    <div
+      class="absolute top-0 left-0 min-h-screen w-full bg-gradient-to-tl from-yellow-500 dark:from-yellow-600 to-purple-500 dark:to-purple-600 opacity-80 filter blur-3xl"
+    />
 
     <div class="relative container pt-28 mx-auto space-y-6 z-20">
       <div class="text-center text-gray-800 dark:text-gray-200">
@@ -18,16 +20,14 @@
         <div
           class="mx-auto rounded-full p-2 w-28 h-28 bg-gray-200 dark:bg-gray-800"
         >
-          <nuxt-img
-            src="/dendy_pp.jpg"
+          <img
+            src="~/assets/images/dendy_pp.jpg"
             alt="Dendy Photo Profile"
-            quality="75"
-            format="webp"
             class="hand-emoji h-full w-full rounded-full object-cover object-center shadow-md"
+            loading="lazy"
             width="100%"
             height="100%"
-            loading="lazy"
-          />
+          >
         </div>
       </div>
       <div

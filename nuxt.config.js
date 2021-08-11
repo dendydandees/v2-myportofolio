@@ -128,7 +128,6 @@ export default {
   },
 
   image: {
-    dir: 'assets/images',
     domains: ['https://tfjgyftazzpzzndywyan.supabase.in/storage/v1/object/sign/dendyportofolio/projects/']
   }
 }
