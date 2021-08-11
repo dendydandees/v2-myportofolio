@@ -69,6 +69,7 @@
             class="flex flex-col items-center md:flex-row space-y-4 md:space-y-0 md:space-x-4"
           >
             <a
+              v-if="project.git_url"
               :href="project.git_url"
               target="_blank"
               rel="noopener noreferrer"
