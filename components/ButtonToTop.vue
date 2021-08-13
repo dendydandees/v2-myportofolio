@@ -1,21 +1,23 @@
 <template>
-  <nuxt-link
-    to="/"
-    exact
-    aria-label="Back to top"
-    class="btn-to-top fixed flex items-center px-3 py-2 text-xs md:text-sm z-50"
-    :class="[showButtonToTop ? 'bottom-4 right-4' : '-bottom-full -right-full']"
-    @click.native="scrollToTop()"
-  >
-    Back to top
-    <span
-      class="iconify ml-2"
-      data-icon="heroicons-outline:arrow-sm-up"
-      data-inline="false"
-      data-width="24px"
-      data-height="24px"
-    />
-  </nuxt-link>
+  <client-only>
+    <nuxt-link
+      to="/"
+      exact
+      aria-label="Back to top"
+      class="btn-to-top fixed flex items-center px-3 py-2 text-xs md:text-sm z-50"
+      :class="[showButtonToTop ? 'bottom-4 right-4' : '-bottom-full -right-full']"
+      @click.native="scrollToTop()"
+    >
+      Back to top
+      <span
+        class="iconify ml-2"
+        data-icon="heroicons-outline:arrow-sm-up"
+        data-inline="false"
+        data-width="24px"
+        data-height="24px"
+      />
+    </nuxt-link>
+  </client-only>
 </template>
 
 <script>
