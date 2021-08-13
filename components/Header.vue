@@ -13,21 +13,19 @@
       >
         Dandees
       </nuxt-link>
-      <client-only>
-        <button
-          class="inline-block link-rounded lg:hidden"
-          aria-label="Side Nav"
-          @click="sideNavClick()"
-        >
-          <span
-            class="iconify text-gray-800 dark:text-gray-200"
-            data-icon="heroicons-outline:menu-alt-2"
-            data-inline="false"
-            data-width="24px"
-            data-height="24px"
-          />
-        </button>
-      </client-only>
+      <button
+        class="inline-block link-rounded lg:hidden"
+        aria-label="Side Nav"
+        @click="sideNavClick()"
+      >
+        <span
+          class="iconify text-gray-800 dark:text-gray-200"
+          data-icon="heroicons-outline:menu-alt-2"
+          data-inline="false"
+          data-width="24px"
+          data-height="24px"
+        />
+      </button>
 
       <nav class="hidden space-x-4 lg:flex lg:items-center">
         <nuxt-link :to="link.home" class="link" exact @click.native="scrollToTop()">
@@ -39,31 +37,29 @@
         <a :href="link.resume" target="_blank" rel="noopener noreferrer" class="btn-resume-large p-2">
           Resume
         </a>
-        <client-only>
-          <button
-            class="link-rounded"
-            @click="toggleTheme()"
-          >
-            <div v-show="isDarkTheme">
-              <span
-                class="iconify text-gray-800 dark:text-gray-200"
-                data-icon="heroicons-outline:sun"
-                data-inline="false"
-                data-width="32px"
-                data-height="32px"
-              />
-            </div>
-            <div v-show="!isDarkTheme">
-              <span
-                class="iconify text-gray-800 dark:text-gray-200"
-                data-icon="heroicons-outline:moon"
-                data-inline="false"
-                data-width="32px"
-                data-height="32px"
-              />
-            </div>
-          </button>
-        </client-only>
+        <button
+          class="link-rounded"
+          @click="toggleTheme()"
+        >
+          <div v-show="isDarkTheme">
+            <span
+              class="iconify text-gray-800 dark:text-gray-200"
+              data-icon="heroicons-outline:sun"
+              data-inline="false"
+              data-width="32px"
+              data-height="32px"
+            />
+          </div>
+          <div v-show="!isDarkTheme">
+            <span
+              class="iconify text-gray-800 dark:text-gray-200"
+              data-icon="heroicons-outline:moon"
+              data-inline="false"
+              data-width="32px"
+              data-height="32px"
+            />
+          </div>
+        </button>
       </nav>
     </div>
 
@@ -89,50 +85,46 @@
         >
           Dandees
         </nuxt-link>
-        <client-only>
-          <button
-            class="link-rounded"
-            aria-label="Side Nav"
-            @click="sideNavClick()"
-          >
-            <span
-              class="iconify text-gray-800 dark:text-gray-200"
-              data-icon="heroicons-outline:x"
-              data-inline="false"
-              data-width="24px"
-            />
-          </button>
-        </client-only>
+        <button
+          class="link-rounded"
+          aria-label="Side Nav"
+          @click="sideNavClick()"
+        >
+          <span
+            class="iconify text-gray-800 dark:text-gray-200"
+            data-icon="heroicons-outline:x"
+            data-inline="false"
+            data-width="24px"
+          />
+        </button>
       </div>
       <nav class="my-10">
         <ul class="space-y-12">
           <li>
-            <client-only>
-              <button
-                class="link-rounded"
-                aria-label="Theme"
-                @click="toggleTheme()"
-              >
-                <div v-show="isDarkTheme">
-                  <span
-                    class="iconify text-gray-800 dark:text-gray-200"
-                    data-icon="heroicons-outline:sun"
-                    data-inline="false"
-                    data-width="32px"
-                    data-height="32px"
-                  />
-                </div>
-                <div v-show="!isDarkTheme">
-                  <span
-                    class="iconify text-gray-800 dark:text-gray-200"
-                    data-icon="heroicons-outline:moon"
-                    data-inline="false"
-                    data-width="32px"
-                    data-height="32px"
-                  />
-                </div>
-              </button>
-            </client-only>
+            <button
+              class="link-rounded"
+              aria-label="Theme"
+              @click="toggleTheme()"
+            >
+              <div v-show="isDarkTheme">
+                <span
+                  class="iconify text-gray-800 dark:text-gray-200"
+                  data-icon="heroicons-outline:sun"
+                  data-inline="false"
+                  data-width="32px"
+                  data-height="32px"
+                />
+              </div>
+              <div v-show="!isDarkTheme">
+                <span
+                  class="iconify text-gray-800 dark:text-gray-200"
+                  data-icon="heroicons-outline:moon"
+                  data-inline="false"
+                  data-width="32px"
+                  data-height="32px"
+                />
+              </div>
+            </button>
           </li>
           <li>
             <nuxt-link
