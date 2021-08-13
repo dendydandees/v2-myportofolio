@@ -20,14 +20,16 @@
         <div
           class="mx-auto rounded-full p-2 w-28 h-28 bg-gray-200 dark:bg-gray-800"
         >
-          <img
-            src="~/assets/images/dendy_pp.jpg"
+          <nuxt-img
+            :src="profileImage"
             alt="Dendy Photo Profile"
+            quality="35"
+            format="webp"
             class="hand-emoji h-full w-full rounded-full object-cover object-center shadow-md"
             loading="lazy"
             width="100%"
             height="100%"
-          >
+          />
         </div>
       </div>
       <div
@@ -48,6 +50,7 @@ import { mapState } from 'vuex'
 export default {
   data () {
     return {
+      profileImage: 'https://tfjgyftazzpzzndywyan.supabase.in/storage/v1/object/sign/dendyportofolio/cv/Dendy PP_compr.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJkZW5keXBvcnRvZm9saW8vY3YvRGVuZHkgUFBfY29tcHIuanBnIiwiaWF0IjoxNjI4ODQ5NDEyLCJleHAiOjE5NDQyMDk0MTJ9.YKujU-WYUJxbcJtCQjHWECamdQnh1iScrVSREh_MTxE',
       bubbleStyle: {
         '--bg-color': '#1f2937'
       }
