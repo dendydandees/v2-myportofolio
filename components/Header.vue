@@ -1,7 +1,12 @@
 <template>
   <header
+    id="header"
     class="p-4 fixed top-0 z-50 min-w-full lg:p-6"
-    :class="[ isIntersectingElement ? 'bg-gray-200 dark:bg-gray-800 shadow-md' : 'bg-transparent' ]"
+    :class="[
+      isIntersectingElement
+        ? 'bg-gray-200 dark:bg-gray-800 shadow-md'
+        : 'bg-transparent'
+    ]"
   >
     <!-- nav for large devices -->
     <div class="container flex justify-between items-center mx-auto">
@@ -30,20 +35,27 @@
       </client-only>
 
       <nav class="hidden space-x-4 lg:flex lg:items-center">
-        <nuxt-link :to="link.home" class="link" exact @click.native="scrollToTop()">
+        <nuxt-link
+          :to="link.home"
+          class="link"
+          exact
+          @click.native="scrollToTop()"
+        >
           Home
         </nuxt-link>
         <nuxt-link :to="link.portofolio" class="link">
           Portofolio
         </nuxt-link>
-        <a :href="link.resume" target="_blank" rel="noopener noreferrer" class="btn-resume-large p-2">
+        <a
+          :href="link.resume"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-resume-large p-2"
+        >
           Resume
         </a>
         <client-only>
-          <button
-            class="link-rounded"
-            @click="toggleTheme()"
-          >
+          <button class="link-rounded" @click="toggleTheme()">
             <div v-show="isDarkTheme">
               <span
                 class="iconify text-gray-800 dark:text-gray-200"
@@ -150,7 +162,12 @@
             </nuxt-link>
           </li>
           <li>
-            <a :href="link.resume" target="_blank" rel="noopener noreferrer" class="btn-resume dark:btn-resume-dark p-2 text-2xl w-full block">
+            <a
+              :href="link.resume"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-resume dark:btn-resume-dark p-2 text-2xl w-full block"
+            >
               Resume
             </a>
           </li>
@@ -171,7 +188,8 @@ export default {
       link: {
         home: '/',
         portofolio: '#portofolio',
-        resume: 'https://tfjgyftazzpzzndywyan.supabase.in/storage/v1/object/sign/dendyportofolio/cv/Dendy Dharmawan_CV 2021_compressed.pdf?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJkZW5keXBvcnRvZm9saW8vY3YvRGVuZHkgRGhhcm1hd2FuX0NWIDIwMjFfY29tcHJlc3NlZC5wZGYiLCJpYXQiOjE2Mjg2NDY0ODEsImV4cCI6MTk0NDAwNjQ4MX0.Ux1JvVgFyP8ozSS5tcncDCflDFK5CIZ2l76md8qdSvU'
+        resume:
+          'https://tfjgyftazzpzzndywyan.supabase.in/storage/v1/object/sign/dendyportofolio/cv/Dendy Dharmawan_CV 2021_compressed.pdf?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJkZW5keXBvcnRvZm9saW8vY3YvRGVuZHkgRGhhcm1hd2FuX0NWIDIwMjFfY29tcHJlc3NlZC5wZGYiLCJpYXQiOjE2Mjg2NDY0ODEsImV4cCI6MTk0NDAwNjQ4MX0.Ux1JvVgFyP8ozSS5tcncDCflDFK5CIZ2l76md8qdSvU'
       }
     }
   },
@@ -179,24 +197,7 @@ export default {
     ...mapState('theme', ['isDarkTheme'])
   },
   mounted () {
-    const socialMediaElement = document.querySelector('#social-media')
-    const options = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 1
-    }
-    const handler = (entries) => {
-      if (entries[0].boundingClientRect.top <= 0) {
-        this.isIntersectingElement = true
-        this.toggleButtonToTop(true)
-      } else {
-        this.isIntersectingElement = false
-        this.toggleButtonToTop(false)
-      }
-    }
-
-    const observer = new IntersectionObserver(handler, options)
-    observer.observe(socialMediaElement)
+    this.intersectingHeader()
   },
   methods: {
     ...mapActions('theme', ['toggleTheme', 'toggleButtonToTop']),
@@ -205,6 +206,26 @@ export default {
     },
     scrollToTop () {
       window.scrollTo(0, 0)
+    },
+    intersectingHeader () {
+      const socialMediaElement = document.querySelector('#social-media')
+      const options = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 1
+      }
+      const handler = (entries) => {
+        if (entries[0].boundingClientRect.top <= 0) {
+          this.isIntersectingElement = true
+          this.toggleButtonToTop(true)
+        } else {
+          this.isIntersectingElement = false
+          this.toggleButtonToTop(false)
+        }
+      }
+
+      const observer = new IntersectionObserver(handler, options)
+      observer.observe(socialMediaElement)
     }
   }
 }

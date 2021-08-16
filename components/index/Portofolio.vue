@@ -1,7 +1,7 @@
 <template>
   <article
-    v-if="true"
     id="portofolio"
+    ref="portofolio"
     class="bg-gray-200 dark:bg-gray-800 px-4 py-10 lg:px-6 lg:py-12"
   >
     <div class="container mx-auto">
@@ -50,16 +50,22 @@
                 </span>
               </div>
 
-              <h3 class="text-4xl font-bold text-gray-800 dark:text-gray-200 group-hover:text-purple-600 dark:group-hover:text-purple-400">
+              <h3
+                class="text-4xl font-bold text-gray-800 dark:text-gray-200 group-hover:text-purple-600 dark:group-hover:text-purple-400"
+              >
                 {{ project.name }}
               </h3>
-              <p class="text-gray-600 dark:text-gray-400 group-hover:text-purple-700 dark:group-hover:text-purple-500">
+              <p
+                class="text-gray-600 dark:text-gray-400 group-hover:text-purple-700 dark:group-hover:text-purple-500"
+              >
                 {{ $moment(project.created_at).format("LL") }}
               </p>
             </div>
 
             <div>
-              <p class="text-gray-600 dark:text-gray-400 group-hover:text-purple-700 dark:group-hover:text-purple-500">
+              <p
+                class="text-gray-600 dark:text-gray-400 group-hover:text-purple-700 dark:group-hover:text-purple-500"
+              >
                 {{ project.description }}
               </p>
             </div>
@@ -136,15 +142,17 @@ export default {
   },
   watch: {
     async item (newItem, oldItem) {
-      await this.$router.push({ name: 'index', hash: '' })
       await this.$fetch()
-      await this.$router.push({ name: 'index', hash: '#portofolio' })
+      await this.$refs.portofolio.scrollIntoView()
 
-      if (newItem >= this.count) { this.showLoadButton = false }
+      if (newItem >= this.count) {
+        this.showLoadButton = false
+      }
     }
   },
   mounted () {
     this.subscribeProjects()
+    this.intersectingFooter()
   },
   methods: {
     hoverEvent (id) {
@@ -173,10 +181,27 @@ export default {
       this.$supabase
         .from('projects')
         .on('*', (payload) => {
-          this.projects = this.projects.filter(project => project.id !== payload.new.id)
+          this.projects = this.projects.filter(
+            project => project.id !== payload.new.id
+          )
           this.projects.unshift(payload.new)
         })
         .subscribe()
+    },
+    intersectingFooter () {
+      const footer = document.querySelector('#footer')
+      const options = {
+        root: null,
+        rootMargin: '0px'
+      }
+      const handler = (entries) => {
+        if (entries[0].isIntersecting && this.showLoadButton) {
+          this.setItem()
+        }
+      }
+
+      const observer = new IntersectionObserver(handler, options)
+      observer.observe(footer)
     }
   }
 }
