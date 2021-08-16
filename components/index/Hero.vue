@@ -27,8 +27,8 @@
             format="webp"
             class="hand-emoji h-full w-full rounded-full object-cover object-center shadow-md"
             loading="lazy"
-            width="100%"
-            height="100%"
+            width="100px"
+            height="100px"
           />
         </div>
       </div>

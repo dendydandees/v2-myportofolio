@@ -26,12 +26,12 @@
         v-for="project in projects"
         v-else
         :key="project.id"
-        class="group relative z-20 my-24 grid grid-cols-12 gap-x-4 gap-y-10 place-items-center place-content-center rounded-lg hover:shadow-xl"
+        class="group relative z-20 my-24 grid grid-cols-12 gap-x-4 gap-y-10 place-items-center place-content-center rounded-lg border-2 border-transparent hover:shadow-xl hover:border-purple-600 dark:hover:border-purple-400"
         @mouseover="hoverEvent(project.id)"
         @mouseleave="hover = null"
       >
         <div
-          :class="[hover === project.id ? 'h-3/4 w-10/12' : 'h-0 w-0']"
+          :class="[hover === project.id ? 'h-3/4 w-8/12' : 'h-0 w-0']"
           class="absolute left-0 right-0 top-0 bottom-0 my-auto mx-auto bg-gradient-to-tl from-yellow-600 dark:from-yellow-800 to-purple-600 dark:to-purple-800 filter blur-3xl animate-pulse opacity-30"
         />
 
@@ -50,16 +50,16 @@
                 </span>
               </div>
 
-              <h3 class="text-4xl font-bold text-gray-800 dark:text-gray-200">
+              <h3 class="text-4xl font-bold text-gray-800 dark:text-gray-200 group-hover:text-purple-600 dark:group-hover:text-purple-400">
                 {{ project.name }}
               </h3>
-              <p class="text-gray-600 dark:text-gray-400">
+              <p class="text-gray-600 dark:text-gray-400 group-hover:text-purple-700 dark:group-hover:text-purple-500">
                 {{ $moment(project.created_at).format("LL") }}
               </p>
             </div>
 
             <div>
-              <p class="text-gray-600 dark:text-gray-400">
+              <p class="text-gray-600 dark:text-gray-400 group-hover:text-purple-700 dark:group-hover:text-purple-500">
                 {{ project.description }}
               </p>
             </div>
