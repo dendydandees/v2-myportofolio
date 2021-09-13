@@ -4,14 +4,14 @@
     <Nuxt keep-alive />
     <Footer />
 
-    <cursor-fx
+    <!-- <cursor-fx
       :config="baseCursor"
       :color="isDarkTheme ? '#818CF8' : '#4F46E5'"
       :color-hover="isDarkTheme ? '#4F46E5' : '#818CF8'"
       delay="30"
       outside-size="80px"
       inside-size="16px"
-    />
+    /> -->
   </main>
 </template>
 

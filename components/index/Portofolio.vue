@@ -23,8 +23,9 @@
 
       <!-- if success -->
       <div
-        v-for="project in projects"
+        v-for="(project, index) in projects"
         v-else
+        :id="`project${index}`"
         :key="project.id"
         class="group relative z-20 my-24 grid grid-cols-12 gap-x-4 gap-y-10 place-items-center place-content-center rounded-lg border-2 border-transparent hover:shadow-xl hover:border-purple-600 dark:hover:border-purple-400"
         @mouseover="hoverEvent(project.id)"
@@ -143,7 +144,9 @@ export default {
   watch: {
     async item (newItem, oldItem) {
       await this.$fetch()
-      await this.$refs.portofolio.scrollIntoView()
+      // await this.$refs.portofolio.scrollIntoView()
+      const scrollTo = document.querySelector(`#project${this.item - 2}`)
+      await scrollTo.scrollIntoView()
 
       if (newItem >= this.count) {
         this.showLoadButton = false
@@ -152,7 +155,7 @@ export default {
   },
   mounted () {
     this.subscribeProjects()
-    this.intersectingFooter()
+    // this.intersectingFooter()
   },
   methods: {
     hoverEvent (id) {
@@ -187,22 +190,22 @@ export default {
           this.projects.unshift(payload.new)
         })
         .subscribe()
-    },
-    intersectingFooter () {
-      const footer = document.querySelector('#footer')
-      const options = {
-        root: null,
-        rootMargin: '0px'
-      }
-      const handler = (entries) => {
-        if (entries[0].isIntersecting && this.showLoadButton) {
-          this.setItem()
-        }
-      }
-
-      const observer = new IntersectionObserver(handler, options)
-      observer.observe(footer)
     }
+    // intersectingFooter () {
+    //   const footer = document.querySelector('#footer')
+    //   const options = {
+    //     root: null,
+    //     rootMargin: '0px'
+    //   }
+    //   const handler = (entries) => {
+    //     if (entries[0].isIntersecting && this.showLoadButton) {
+    //       this.setItem()
+    //     }
+    //   }
+
+    //   const observer = new IntersectionObserver(handler, options)
+    //   observer.observe(footer)
+    // }
   }
 }
 </script>
