@@ -1,4 +1,10 @@
 export default {
+  // Server options
+  server: {
+    port: 8000, // default: 3000
+    host: '0.0.0.0' // default: localhost,
+  },
+
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 
@@ -59,7 +65,10 @@ export default {
   css: ['~/assets/css/main.css'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [{ src: '~/plugins/persistedState.client.js' }, { src: '~/plugins/vueCursor.client.js' }],
+  plugins: [
+    { src: '~/plugins/persistedState.client.js' },
+    { src: '~/plugins/vueCursor.client.js' }
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -128,6 +137,8 @@ export default {
   },
 
   image: {
-    domains: ['https://tfjgyftazzpzzndywyan.supabase.in/storage/v1/object/sign/dendyportofolio/projects/']
+    domains: [
+      'https://tfjgyftazzpzzndywyan.supabase.in/storage/v1/object/sign/dendyportofolio/projects/'
+    ]
   }
 }
