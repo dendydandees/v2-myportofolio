@@ -3,8 +3,8 @@
     <IndexHero />
     <IndexSocialMedia />
     <IndexPortofolio />
-    <ButtonToTop />
     <IndexPhotography />
+    <ButtonToTop />
   </section>
 </template>
 

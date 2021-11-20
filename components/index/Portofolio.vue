@@ -7,7 +7,7 @@
     <div class="container mx-auto">
       <!-- section title -->
       <div class="my-24">
-        <h2 class="text-5xl text-gray-800 dark:text-gray-200 font-bold mb-6">
+        <h2 class="section-header text-left mb-6">
           Portofolio
         </h2>
         <p class="text-gray-700 dark:text-gray-300 w-full md:w-8/12 lg:w-6/12">
@@ -131,5 +131,3 @@ export default {
   }
 }
 </script>
-
-<style></style>
