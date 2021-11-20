@@ -27,6 +27,9 @@
   .transition-custom-300 {
     @apply transition-all duration-300;
   }
+  .section-header {
+    @apply text-5xl text-center text-gray-800 dark:text-gray-200 font-bold;
+  }
   .link {
     @apply p-2 text-center text-gray-800 dark:text-gray-200 border-b-2 border-transparent hover:border-b-2  hover:border-gray-800 dark:hover:border-gray-200;
   }

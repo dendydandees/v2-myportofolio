@@ -1,7 +1,7 @@
 <template>
   <div
     :id="`project${index}`"
-    class="group relative z-20 my-24 grid grid-cols-12 gap-x-4 gap-y-10 place-items-center place-content-center rounded-lg border-2 border-transparent hover:shadow-xl hover:border-purple-600 dark:hover:border-purple-400"
+    class="group relative z-20 my-24 grid grid-cols-12 gap-x-4 gap-y-10 rounded-lg border-2 border-transparent hover:shadow-xl hover:border-purple-600 dark:hover:border-purple-400"
     @mouseover="hoverEvent(project.id)"
     @mouseleave="hover = null"
   >
@@ -46,6 +46,7 @@
         </div>
       </div>
 
+      <!-- Card button -->
       <div
         class="flex flex-col items-center md:flex-row space-y-4 md:space-y-0 md:space-x-4"
       >

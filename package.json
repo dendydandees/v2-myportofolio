@@ -18,6 +18,7 @@
     "core-js": "^3.15.1",
     "nuxt": "^2.15.7",
     "nuxt-supabase": "^2.0.0",
+    "vue-masonry-wall": "^0.3.2",
     "vuex-persistedstate": "^4.0.0"
   },
   "devDependencies": {

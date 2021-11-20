@@ -3,7 +3,7 @@
     id="header"
     class="p-4 fixed top-0 z-50 min-w-full lg:p-6"
     :class="[
-      isIntersectingElement
+      $route.name !== 'index' ? 'bg-gray-200 dark:bg-gray-800 shadow-md': isIntersectingElement
         ? 'bg-gray-200 dark:bg-gray-800 shadow-md'
         : 'bg-transparent'
     ]"
@@ -45,6 +45,9 @@
         </nuxt-link>
         <nuxt-link :to="link.portofolio" class="link">
           Portofolio
+        </nuxt-link>
+        <nuxt-link :to="link.photography" class="link">
+          Photography
         </nuxt-link>
         <a
           :href="link.resume"
@@ -162,6 +165,11 @@
             </nuxt-link>
           </li>
           <li>
+            <nuxt-link :to="link.photography" class="link text-2xl">
+              Photography
+            </nuxt-link>
+          </li>
+          <li>
             <a
               :href="link.resume"
               target="_blank"
@@ -188,6 +196,7 @@ export default {
       link: {
         home: '/',
         portofolio: '/portofolio',
+        photography: '/photography',
         resume:
           'https://tfjgyftazzpzzndywyan.supabase.in/storage/v1/object/sign/dendyportofolio/cv/Dendy Dharmawan_CV 2021_compressed.pdf?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJkZW5keXBvcnRvZm9saW8vY3YvRGVuZHkgRGhhcm1hd2FuX0NWIDIwMjFfY29tcHJlc3NlZC5wZGYiLCJpYXQiOjE2MzEwMDY3NjEsImV4cCI6MTk0NjM2Njc2MX0.tjN7T2ezJcsuy2Kh1c7WRSZz9ozyRJbYmQ9TOCKRnNw'
       }

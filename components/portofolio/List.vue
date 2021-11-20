@@ -1,8 +1,8 @@
 <template>
-  <article class="p-4 pt-28 lg:px-6 z-0 bg-gray-200 dark:bg-gray-800">
+  <article class="p-4 pt-40 lg:px-6 z-0 bg-gray-200 dark:bg-gray-800">
     <div class="container mx-auto">
       <h2
-        class="text-5xl text-center text-gray-800 dark:text-gray-200 font-bold mb-14"
+        class="section-header mb-14"
       >
         Portofolio
       </h2>
