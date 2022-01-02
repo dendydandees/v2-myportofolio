@@ -3,9 +3,11 @@
     id="header"
     class="p-4 fixed top-0 z-50 min-w-full lg:p-6"
     :class="[
-      $route.name !== 'index' ? 'bg-gray-200 dark:bg-gray-800 shadow-md': isIntersectingElement
+      $route.name !== 'index'
         ? 'bg-gray-200 dark:bg-gray-800 shadow-md'
-        : 'bg-transparent'
+        : isIntersectingElement
+          ? 'bg-gray-200 dark:bg-gray-800 shadow-md'
+          : 'bg-transparent'
     ]"
   >
     <!-- nav for large devices -->
@@ -198,7 +200,7 @@ export default {
         portofolio: '/portofolio',
         photography: '/photography',
         resume:
-          'https://tfjgyftazzpzzndywyan.supabase.in/storage/v1/object/sign/dendyportofolio/cv/Dendy Dharmawan_CV 2021_compressed.pdf?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJkZW5keXBvcnRvZm9saW8vY3YvRGVuZHkgRGhhcm1hd2FuX0NWIDIwMjFfY29tcHJlc3NlZC5wZGYiLCJpYXQiOjE2MzEwMDY3NjEsImV4cCI6MTk0NjM2Njc2MX0.tjN7T2ezJcsuy2Kh1c7WRSZz9ozyRJbYmQ9TOCKRnNw'
+          'https://tfjgyftazzpzzndywyan.supabase.in/storage/v1/object/public/dendyportofolio/cv/Resume-Dendy-Dharmawan.pdf'
       }
     }
   },
